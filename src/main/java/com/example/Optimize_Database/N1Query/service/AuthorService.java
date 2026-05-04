@@ -23,15 +23,21 @@ public class AuthorService {
         return authorRepository.findAllWithBooks();
     }
 
+
+
     // Strategy 2: Entity Graph
     public List<Author> getAuthorsWithEntityGraph() {
         return authorRepository.findAll();
     }
 
+
+
     // Strategy 3: Projections (DTOs)
     public List<AuthorDto> getAuthorReport() {
         return authorRepository.getAuthorReport();
     }
+
+
 
     // Strategy 4: JPA Specification (Dynamic Fetching)
     public List<Author> getAuthorsWithSpecs(String name) {
