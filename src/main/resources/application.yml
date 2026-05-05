@@ -12,3 +12,4 @@ spring:
     properties:
       hibernate:
         dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
+        default_batch_fetch_size: 10   // batch fetch optimization

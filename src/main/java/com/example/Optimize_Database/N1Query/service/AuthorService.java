@@ -18,28 +18,28 @@ public class AuthorService {
         this.authorRepository = authorRepository;
     }
 
-    // Strategy 1: JOIN FETCH (JPQL)
+    // Strategy 1-- JOIN FETCH (JPQL)
     public List<Author> getAuthorsWithJoinFetch() {
         return authorRepository.findAllWithBooks();
     }
 
 
 
-    // Strategy 2: Entity Graph
+    // Strategy 2-- Entity Graph
     public List<Author> getAuthorsWithEntityGraph() {
         return authorRepository.findAll();
     }
 
 
 
-    // Strategy 3: Projections (DTOs)
+    // Strategy 3 --Projections (DTOs)
     public List<AuthorDto> getAuthorReport() {
         return authorRepository.getAuthorReport();
     }
 
 
 
-    // Strategy 4: JPA Specification (Dynamic Fetching)
+    // Strategy 4--- JPA Specification (Dynamic Fetching)
     public List<Author> getAuthorsWithSpecs(String name) {
         Specification<Author> spec = Specification
                 .where(AuthorSpecs.fetchBooksSafely())
