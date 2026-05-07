@@ -7,9 +7,16 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: ${DDL_AUTO:update} // will be off in prod because of control issue (Use Flyway Tools)
+      ddl-auto: ${DDL_AUTO:none} # update will be off in prod because of control issue (Use Flyway Tools)
     show-sql: ${SHOW_SQL:true}
     properties:
       hibernate:
         dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
-        default_batch_fetch_size: 10   // batch fetch optimization
+        default_batch_fetch_size: 10   # batch fetch optimization
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migrations
+    #if have already existing  db
+    baseline-on-migrate: true
+    baseline-version: 1
