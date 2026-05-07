@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: ${DDL_AUTO:update}
+      ddl-auto: ${DDL_AUTO:update} // will be off in prod because of control issue (Use Flyway Tools)
     show-sql: ${SHOW_SQL:true}
     properties:
       hibernate:

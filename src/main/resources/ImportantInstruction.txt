@@ -1,0 +1,8 @@
+
+
+#--------Flyway
+
+1. create sql migration scirpt(file)
+2.flyway runs them in order
+3.it tracks execution in a history table
+4.only new migrations run nextime
