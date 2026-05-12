@@ -5,6 +5,44 @@ spring:
     password: ${DB_PASSWORD:root}
     driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
 
+
+  # --- MULTI-DATASOURCE CONFIGURATION ---
+
+#    # PRIMARY (The Write Node)
+#    primary:
+#      jdbc-url: jdbc:postgresql://localhost:5432/Microservice-hotel
+#      driver-class-name: org.postgresql.Driver
+#      username: postgres
+#      password: root
+#      pool-name: Primary-Write-Pool
+#
+#    # REPLICA 1 (Read Node)
+#    replica1:
+#      jdbc-url: jdbc:postgresql://localhost:5433/Microservice-hotel-r1
+#      driver-class-name: org.postgresql.Driver
+#      username: postgres
+#      password: root
+#      pool-name: Replica-1-Pool
+#
+#    # REPLICA 2 (Read Node)
+#    replica2:
+#      jdbc-url: jdbc:postgresql://localhost:5434/Microservice-hotel-r2
+#      driver-class-name: org.postgresql.Driver
+#      username: postgres
+#      password: root
+#      pool-name: Replica-2-Pool
+#
+#    # REPLICA 3 (Read Node)
+#    replica3:
+#      jdbc-url: jdbc:postgresql://localhost:5435/Microservice-hotel-r3
+#      driver-class-name: org.postgresql.Driver
+#      username: postgres
+#      password: root
+#      pool-name: Replica-3-Pool
+
+
+
+
   jpa:
     hibernate:
       ddl-auto: ${DDL_AUTO:none} # update will be off in prod because of control issue (Use Flyway Tools)
